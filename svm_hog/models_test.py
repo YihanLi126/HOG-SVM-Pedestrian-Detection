@@ -60,7 +60,7 @@ fpr2_svm=np.zeros(sum)
 mr_lr=np.zeros(sum)
 fpr2_lr=np.zeros(sum)
 
-for i in range(0,sum):
+for i in range(30,sum):
     svm_label=np.zeros(i)
     lr_label=np.zeros(i)
     svm_pred=np.zeros(i)
@@ -70,20 +70,20 @@ for i in range(0,sum):
         lr_label[index]=test_labels[lr_sort_index[index]]
         svm_pred[index]=Y_pred_svm[svm_sort_index[index]]
         lr_pred[index]=Y_pred_lr[lr_sort_index[index]]
-    print("svm_label: ",svm_label)
-    print("svm_pred: ",svm_pred)
-    if len(svm_label)==0:
-        mr_svm[i]=0
-        mr_lr[i]=0
-        fpr2_svm[i]=0
-        fpr2_lr[i]
-        continue
-    elif np.sum(svm_label)==0 and np.sum(svm_pred)==0:
-        mr_svm[i]=0
-        mr_lr[i]=0
-        fpr2_svm[i]=0
-        fpr2_lr[i]
-        continue
+    # print("svm_label: ",svm_label)
+    # print("svm_pred: ",svm_pred)
+    # if len(svm_label)==0:
+    #     mr_svm[i]=0
+    #     mr_lr[i]=0
+    #     fpr2_svm[i]=0
+    #     fpr2_lr[i]
+    #     continue
+    # elif np.sum(svm_label)==0 and np.sum(svm_pred)==0:
+    #     mr_svm[i]=0
+    #     mr_lr[i]=0
+    #     fpr2_svm[i]=0
+    #     fpr2_lr[i]
+    #     continue
     tn_svm, fp_svm, fn_svm, tp_svm  = confusion_matrix(svm_label, svm_pred).ravel()
     tn_lr, fp_lr, fn_lr, tp_lr  = confusion_matrix(lr_label,lr_pred).ravel()
     mr_svm[i]=tp_svm/(tp_svm+fn_svm)

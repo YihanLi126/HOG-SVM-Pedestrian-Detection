@@ -30,7 +30,7 @@ def sliding_window(image, stepSize, windowSize):
 # Test the trained classifier on an image below!
 scale = 0
 detections = []
-img= cv2.imread("INRIAPerson/Test/pos/crop_000007.png")
+img= cv2.imread("INRIAPerson/Test/pos/person_265.png")
 img= cv2.resize(img,(400,256)) 
 
 # defining the size of the sliding window (has to be, same as the size of the image in the training data)

@@ -13,7 +13,7 @@ train_labels = []
 pos_im_path = 'INRIAPerson/cutting/train_cutting/pos'
 neg_im_path = 'INRIAPerson/64X128_neg'
 
-model_path = 'svm_hog/models/lr_model.dat'
+model_path = 'svm_hog/model/lr_model.dat'
 
 # Load the positive features
 for filename in glob.glob(os.path.join(pos_im_path,"*.png")):
